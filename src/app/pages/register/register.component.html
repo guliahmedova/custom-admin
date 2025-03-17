@@ -1,0 +1,70 @@
+<div class="register-container">
+  <!-- 🌟 -->
+  <div class="register-card">
+    <form class="card-form">
+      <h3 class="form-title">
+        <span>Create your account</span>
+        <p>Please enter your details to create an account.</p>
+      </h3>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="email">Email address</label>
+          <input
+            matInput
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter email address"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="Password">Password</label>
+          <input
+            matInput
+            type="password"
+            name="Password"
+            id="Password"
+            placeholder="Enter Password"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            matInput
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder="Enter confirm password"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group-checkbox">
+        <input type="checkbox" name="isAccepted" id="isAccepted" />
+        <label for="isAccepted"
+          >By clicking on this checkbox you agree to our Terms and you
+          acknowledge having read our Privacy Notice</label
+        >
+      </div>
+
+      <button mat-flat-button class="register-button">Create Account</button>
+
+      <p class="register-description">
+        Already have an account?
+        <a routerLink="/login">
+          <strong>Login</strong>
+        </a>
+      </p>
+    </form>
+  </div>
+  <!-- 🌟 -->
+
+  <div class="register-bg"></div>
+</div>

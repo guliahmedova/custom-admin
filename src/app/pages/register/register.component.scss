@@ -1,0 +1,109 @@
+.register-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  .register-card {
+    padding-top: 3.5rem;
+    padding-inline: 3rem;
+    background-color: var(--white);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .card-form {
+      .form-title {
+        text-align: center;
+        color: var(--neutral-800);
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        font-size: clamp(
+          1rem,
+          0.8181818181818181rem + 0.7575757575757576vw,
+          1.5rem
+        );
+
+        p {
+          color: var(--neutral-500);
+          font-size: 13px;
+          margin-top: 8px;
+          font-weight: 400;
+        }
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+
+        mat-form-field {
+          width: 100%;
+        }
+
+        label {
+          color: var(--neutral-800);
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 6px;
+          display: block;
+        }
+
+        &-checkbox {
+          margin-bottom: 2rem;
+          color: var(--neutral-500);
+          display: flex;
+          gap: 14px;
+          align-items: center;
+          font-size: 0.75rem;
+          font-size: clamp(
+            0.75rem,
+            0.6590909090909091rem + 0.3787878787878788vw,
+            1rem
+          );
+
+          input {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+      }
+
+      .register-button {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .register-description {
+        text-align: center;
+        color: var(--neutral-500);
+
+        @media (width <= 24rem) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    @media (width <= 24rem) {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  .register-bg {
+    background-image: url("/imgs/auth-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+  }
+
+  @media (width <= 74rem) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (width <= 54rem) {
+    grid-template-columns: 1fr;
+
+    .register-bg {
+      display: none;
+    }
+  }
+}
