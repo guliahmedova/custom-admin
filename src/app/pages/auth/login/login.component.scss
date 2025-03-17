@@ -1,0 +1,21 @@
+.login-button {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.login-description {
+  text-align: center;
+  color: var(--neutral-500);
+
+  @media (width <= 24rem) {
+    font-size: 14px;
+  }
+}
+
+.form-group-question{
+  color: var(--neutral-500);
+  margin-bottom: 2rem;
+  font-style: italic;
+  text-align: right;
+  display: block;
+}

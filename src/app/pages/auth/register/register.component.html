@@ -1,0 +1,51 @@
+<app-auth-layout
+  formTitle="Create your account"
+  formTitleDescription="Please enter your details to create an account."
+>
+  <app-form-group
+    label="Email address"
+    type="email"
+    name="email"
+    id="email"
+    placeholder="Enter email address"
+  />
+
+  <app-form-group
+    label="Password"
+    type="password"
+    name="password"
+    id="password"
+    placeholder="Enter Password"
+    [isPasswordVisible]="isPasswordVisible1()"
+    [isPassword]="true"
+    (togglePasswordEvent)="togglePassword(isPasswordVisible1)"
+  />
+
+  <app-form-group
+    label="Confirm Password"
+    type="password"
+    name="confirmPassword"
+    id="confirmPassword"
+    placeholder="Enter confirm password"
+    [isPasswordVisible]="isPasswordVisible2()"
+    [isPassword]="true"
+    (togglePasswordEvent)="togglePassword(isPasswordVisible2)"
+  />
+
+  <div class="form-group-checkbox">
+    <input type="checkbox" name="isAccepted" id="isAccepted" />
+    <label for="isAccepted"
+      >By clicking on this checkbox you agree to our Terms and you acknowledge
+      having read our Privacy Notice</label
+    >
+  </div>
+
+  <button mat-flat-button class="register-button">Create Account</button>
+
+  <p class="register-description">
+    Already have an account?
+    <a routerLink="/login">
+      <strong>Login</strong>
+    </a>
+  </p>
+</app-auth-layout>

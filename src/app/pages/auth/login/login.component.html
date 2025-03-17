@@ -1,0 +1,34 @@
+<app-auth-layout
+  formTitle="Welcome back"
+  formTitleDescription="Please enter your details to log in."
+>
+  <app-form-group
+    label="Email address"
+    type="email"
+    name="email"
+    id="email"
+    placeholder="Enter email address"
+  />
+
+  <app-form-group
+    label="Password"
+    type="password"
+    name="password"
+    id="password"
+    placeholder="Enter Password"
+    [isPasswordVisible]="isPasswordVisible()"
+    [isPassword]="true"
+    (togglePasswordEvent)="togglePassword()"
+  />
+
+  <a href="" class="form-group-question">Forgot password?</a>
+
+  <button mat-flat-button class="login-button">Log In</button>
+
+  <p class="login-description">
+    Don’t have an account?
+    <a routerLink="/login">
+      <strong>Create Account</strong>
+    </a>
+  </p>
+</app-auth-layout>

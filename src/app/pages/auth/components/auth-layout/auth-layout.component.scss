@@ -31,55 +31,6 @@
           font-weight: 400;
         }
       }
-
-      .form-group {
-        margin-bottom: 20px;
-
-        mat-form-field {
-          width: 100%;
-        }
-
-        label {
-          color: var(--neutral-800);
-          font-size: 14px;
-          font-weight: 600;
-          margin-bottom: 6px;
-          display: block;
-        }
-
-        &-checkbox {
-          margin-bottom: 2rem;
-          color: var(--neutral-500);
-          display: flex;
-          gap: 14px;
-          align-items: center;
-          font-size: 0.75rem;
-          font-size: clamp(
-            0.75rem,
-            0.6590909090909091rem + 0.3787878787878788vw,
-            1rem
-          );
-
-          input {
-            width: 1.5rem;
-            height: 1.5rem;
-          }
-        }
-      }
-
-      .register-button {
-        width: 100%;
-        margin-bottom: 2rem;
-      }
-
-      .register-description {
-        text-align: center;
-        color: var(--neutral-500);
-
-        @media (width <= 24rem) {
-          font-size: 14px;
-        }
-      }
     }
 
     @media (width <= 24rem) {
