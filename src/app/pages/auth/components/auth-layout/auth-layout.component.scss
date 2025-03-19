@@ -39,11 +39,13 @@
   }
 
   .register-bg {
-    background-image: url("/imgs/auth-bg.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     width: 100%;
+    height: 100vh;
+
+    img {
+      height: 100%;
+      object-fit: fill;
+    }
   }
 
   @media (width <= 74rem) {

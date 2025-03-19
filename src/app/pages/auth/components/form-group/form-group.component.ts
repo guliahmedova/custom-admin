@@ -17,7 +17,7 @@ export class FormGroupComponent {
   inputId = input<string>('');
   label = input<string>('');
   name = input<string>('');
-  togglePasswordEvent = output()
+  togglePasswordEvent = output();
   isPasswordVisible = input<boolean>(false);
 
   togglePassword() {

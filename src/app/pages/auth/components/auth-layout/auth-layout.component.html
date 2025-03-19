@@ -1,14 +1,16 @@
 <div class="register-container">
   <div class="register-card">
-    <form class="card-form">
+    <div class="card-form">
       <h3 class="form-title">
         <span>{{ formTitle() }}</span>
         <p>{{ formTitleDescription() }}</p>
       </h3>
-
+      
       <ng-content></ng-content>
-    </form>
+    </div>
   </div>
 
-  <div class="register-bg"></div>
+  <div class="register-bg">
+    <img src="/imgs/auth-bg.png" alt="">
+  </div>
 </div>
