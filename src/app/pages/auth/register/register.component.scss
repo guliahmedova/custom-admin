@@ -1,8 +1,10 @@
+@use "functions.scss" as *;
+
 .form-group-checkbox {
   margin-bottom: 2rem;
   color: var(--neutral-500);
   display: flex;
-  gap: 14px;
+  gap: rem(14);
   align-items: center;
   font-size: 0.75rem;
   font-size: clamp(0.75rem, 0.6590909090909091rem + 0.3787878787878788vw, 1rem);
@@ -23,6 +25,6 @@
   color: var(--neutral-500);
 
   @media (width <= 24rem) {
-    font-size: 14px;
+    font-size: rem(14);
   }
 }

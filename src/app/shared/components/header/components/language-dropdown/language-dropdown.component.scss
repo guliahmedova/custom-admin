@@ -1,0 +1,44 @@
+@use "functions.scss" as *;
+
+.menu-button {
+  width: 100%;
+
+  .button-container {
+    display: flex;
+    align-items: center;
+    padding-block: rem(11);
+    color: var(--neutral-800);
+
+    app-svg {
+      width: 2rem;
+      height: 2rem;
+      margin-right: rem(10);
+    }
+
+    mat-icon {
+      margin-left: rem(28);
+    }
+  }
+}
+
+mat-menu {
+
+    display: flex;
+    flex-direction: column;
+
+  button {
+    display: flex;
+    align-items: center;
+}
+}
+
+app-svg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: rem(10);
+}
+
+.mat-mdc-menu-item-text{
+    display: flex !important;
+    align-items: center !important;
+}

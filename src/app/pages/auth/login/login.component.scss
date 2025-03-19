@@ -1,6 +1,8 @@
+@use "functions.scss" as *;
+
 .login-button {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: rem(32);
 }
 
 .login-description {
@@ -8,13 +10,13 @@
   color: var(--neutral-500);
 
   @media (width <= 24rem) {
-    font-size: 14px;
+    font-size: rem(14);
   }
 }
 
-.form-group-question{
+.form-group-question {
   color: var(--neutral-500);
-  margin-bottom: 2rem;
+  margin-bottom: rem(32);
   font-style: italic;
   text-align: right;
   display: block;

@@ -14,6 +14,10 @@ import { Component, input, OnInit } from '@angular/core';
         border-radius: inherit;
         display: inline-block;
       }
+
+      :host{
+        display: inline-block;
+      }
     `,
 })
 export class SvgComponent implements OnInit {

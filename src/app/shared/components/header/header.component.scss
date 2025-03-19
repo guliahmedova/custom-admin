@@ -1,0 +1,33 @@
+@use "functions.scss" as *;
+
+.header {
+  background-color: var(--white);
+  box-shadow: var(--bS);
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: lightblue;
+
+    padding: rem(24) rem(25);
+
+    .right,
+    .nav-icons,
+    .left {
+      display: flex;
+      align-items: center;
+      gap: rem(20);
+    }
+
+    .left {
+      .logo {
+        app-svg {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
+}
