@@ -1,44 +1,40 @@
 @use "functions.scss" as *;
 
-.menu-button {
-  width: 100%;
+.language-option,
+.selected-language {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+}
 
-  .button-container {
-    display: flex;
-    align-items: center;
-    padding-block: rem(11);
-    color: var(--neutral-800);
+.language-label {
+  color: var(--neutral-800);
+  font-weight: 700;
+}
 
-    app-svg {
-      width: 2rem;
-      height: 2rem;
-      margin-right: rem(10);
-    }
+.language-icon {
+  width: rem(28);
+  height: rem(28);
+  border-radius: 50%;
+}
 
-    mat-icon {
-      margin-left: rem(28);
-    }
+:host ::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 28px;
+}
+
+:host ::ng-deep .mat-mdc-form-field-infix {
+  padding-bottom: 0 !important;
+}
+
+mat-form-field {
+  @media (width <= rem(910)) {
+    width: rem(260);
   }
 }
 
-mat-menu {
-
-    display: flex;
-    flex-direction: column;
-
-  button {
-    display: flex;
-    align-items: center;
-}
-}
-
-app-svg {
-  width: 2rem;
-  height: 2rem;
-  margin-right: rem(10);
-}
-
-.mat-mdc-menu-item-text{
-    display: flex !important;
-    align-items: center !important;
+:host,
+mat-form-field {
+  @media (width <= rem(494)) {
+    width: 100% !important;
+  }
 }

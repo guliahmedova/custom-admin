@@ -1,16 +1,17 @@
-<button mat-stroked-button [matMenuTriggerFor]="menu" class="menu-button">
-  <div class="button-container">
-    <app-svg type="uk" />
-    <span>English</span>
-    <mat-icon>arrow_drop_down</mat-icon>
-  </div>
-</button>
+<mat-form-field appearance="outline">
+  <mat-select [(value)]="selected" (valueChange)="selectLanguage($event)">
+    <mat-select-trigger>
+      <div class="selected-language">
+        <img class="language-icon" [src]="selected.icon" alt="" />
+        <span class="language-label">{{ selected.label }}</span>
+      </div>
+    </mat-select-trigger>
 
-<mat-menu #menu="matMenu">
-  @for (item of languageList; track item.id) {
-  <button mat-menu-item >
-    <app-svg [type]="item.icon" />
-    <span>{{ item.label }}</span>
-  </button>
-  }
-</mat-menu>
+    <mat-option *ngFor="let language of languageList" [value]="language">
+      <div class="language-option">
+        <img class="language-icon" [src]="language.icon" alt="" />
+        <span class="language-label">{{ language.label }}</span>
+      </div>
+    </mat-option>
+  </mat-select>
+</mat-form-field>

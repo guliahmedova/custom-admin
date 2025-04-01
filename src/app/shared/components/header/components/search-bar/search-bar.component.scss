@@ -1,0 +1,21 @@
+@use "functions.scss" as *;
+
+:host ::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 28px;
+}
+
+:host ::ng-deep .mdc-text-field--outlined {
+  font-weight: 500;
+  --mdc-outlined-text-field-input-text-placeholder-color: var(--neutral-500);
+}
+
+mat-icon {
+  color: var(--neutral-500);
+}
+
+:host,
+mat-form-field {
+  @media (width <= rem(494)) {
+    width: 100% !important;
+  }
+}

@@ -3,22 +3,22 @@ import { Language } from '../types';
 export const languages: Language[] = [
   {
     id: 'uk',
-    icon: 'uk',
+    icon: '/icons/flags/uk.svg',
     label: 'English',
   },
   {
     id: 'az',
-    icon: 'az',
+    icon: '/icons/flags/az.svg',
     label: 'Azerbaijan',
   },
   {
     id: 'tr',
-    icon: 'tr',
+    icon: '/icons/flags/tr.svg',
     label: 'Turkish',
   },
   {
     id: 'ru',
-    icon: 'ru',
+    icon: '/icons/flags/ru.svg',
     label: 'Russian',
   },
 ];

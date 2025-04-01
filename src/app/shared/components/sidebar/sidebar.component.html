@@ -1,1 +1,10 @@
-<p>sidebar works!</p>
+<aside class="sidebar">
+  <ul class="sidebar-container">
+    @for (item of sidebarLinks; track item.id) {
+    <li class="sidebar-item">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.label }}</span>
+    </li>
+    }
+  </ul>
+</aside>
