@@ -9,14 +9,13 @@
   [style.paddingLeft]="indentation()"
 >
   <mat-icon
-    [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
     matListItemIcon
   >
     {{ item().icon }}
   </mat-icon>
   @if (!collapsed()) {
   <span matListItemTitle class="item-label">{{ item().label }}</span>
-  } @if(item().children){
+  } @if(item().subItems){
   <span matListItemMeta class="arrow-icon-container">
     @if(nestedMenuOpen()) {
     <mat-icon class="arrow-icon">expand_less</mat-icon>
@@ -27,9 +26,9 @@
   }
 </a>
 
-@if (item().children && nestedMenuOpen()) {
+@if (item().subItems && nestedMenuOpen()) {
 <div @expandContractMenu>
-  @for (subItem of item().children; track subItem.label) {
+  @for (subItem of item().subItems; track subItem.label) {
   <app-sidebar-item
     [item]="subItem"
     [collapsed]="collapsed()"

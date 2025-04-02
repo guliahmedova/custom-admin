@@ -1,9 +1,9 @@
 import { Component, computed, Input, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { SidebarItemComponent } from "./components/sidebar-item/sidebar-item.component";
 import { sidebarLinks } from './consts/links';
 import { SidebarItem } from './types';
-import { SidebarItemComponent } from "./components/sidebar-item/sidebar-item.component";
 
 @Component({
   selector: 'app-sidebar',

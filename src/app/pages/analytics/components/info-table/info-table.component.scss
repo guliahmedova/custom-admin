@@ -1,0 +1,86 @@
+@use "functions.scss" as *;
+
+.table-card {
+  border: 1px solid var(--neutral-200);
+  border-radius: rem(12);
+  padding: rem(18);
+  background-color: var(--white);
+
+  .table {
+    background-color: lightblue;
+
+    &-header {
+      background-color: var(--primary-100);
+      border-top-left-radius: rem(12);
+      border-top-right-radius: rem(12);
+      display: flex;
+      align-items: center;
+
+      .table-header-box {
+        padding: rem(12);
+        color: var(--neutral-800);
+        font-weight: 700;
+        font-size: rem(14);
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+        width: 100%;
+      }
+
+      & :nth-child(1) {
+        background-color: green;
+        width: rem(213.5);
+      }
+
+      & :nth-child(2) {
+        background-color: orange;
+        width: rem(110);
+      }
+
+      & :nth-child(3) {
+        background-color: violet;
+        width: rem(130);
+      }
+
+      & :nth-child(4) {
+        background-color: aquamarine;
+        width: rem(81);
+      }
+    }
+
+    &-body {
+      background-color: pink;
+
+      &-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: rem(12);
+
+        * {
+          width: 100%;
+        }
+
+        .port {
+          background-color: green;
+          width: rem(213.5);
+        }
+
+        .total {
+          background-color: orange;
+          width: rem(110);
+        }
+
+        .ratio {
+          background-color: violet;
+          width: rem(130);
+        }
+
+        .trend {
+          background-color: aquamarine;
+          width: rem(81);
+        }
+      }
+    }
+  }
+}

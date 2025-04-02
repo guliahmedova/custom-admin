@@ -24,6 +24,16 @@
   }
 }
 
+.selected-menu-item {
+  border-left: rem(3) var(--primary-700) solid;
+  color: var(--primary-700);
+  background-image: linear-gradient(to right, var(--primary-100), var(--white));
+
+  mat-icon {
+    color: inherit;
+  }
+}
+
 :host * {
   transition: all 500ms ease-in-out;
 }

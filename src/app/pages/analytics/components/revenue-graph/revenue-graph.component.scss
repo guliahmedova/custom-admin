@@ -1,0 +1,21 @@
+@use "functions.scss" as *;
+
+.revenue-graph {
+  border: 1px solid var(--neutral-200);
+  border-radius: rem(12);
+  padding: rem(18);
+  background-color: var(--white);
+
+  &-container {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: rem(50);
+    }
+  }
+}
+
+:host ::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 28px;
+}

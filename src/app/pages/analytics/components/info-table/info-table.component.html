@@ -1,0 +1,39 @@
+<div class="table-card">
+  <h2 class="dashboard-card-title">{{ title() }}</h2>
+
+  <div class="table">
+    <div class="table-header">
+      @for (item of headers; track $index) {
+      <span class="table-header-box">
+        {{ item }}
+        <mat-icon>unfold_more</mat-icon>
+      </span>
+      }
+    </div>
+
+    <div class="table-body">
+      @for (item of data(); track $index) {
+      <div class="table-body-row">
+        <div class="port">
+          @if (item.avatar) {
+          <img [src]="item.avatar" [alt]="item.port" />
+          }
+          <span>{{ item.port }}</span>
+        </div>
+
+        <div class="total">
+          {{ item.total }}
+        </div>
+
+        <div class="ratio">
+          {{ item.ratio }}
+        </div>
+
+        <div class="trend">
+          {{ item.trend }}
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

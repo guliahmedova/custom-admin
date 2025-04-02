@@ -1,6 +1,6 @@
 <aside class="sidebar">
   <ul class="sidebar-container">
-    @for (item of menuItems; track item.id) {
+    @for (item of menuItems; track item.label) {
     <app-sidebar-item [item]="item" [collapsed]="sideNavCollapsed()" />
     }
   </ul>
