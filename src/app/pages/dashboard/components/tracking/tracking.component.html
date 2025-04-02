@@ -1,0 +1,48 @@
+<div class="tracking-container">
+  <div class="header">
+    <h2 class="dashboard-card-title">{{ title() }}</h2>
+
+    <div class="status-container">
+      <h6 class="status">Status:</h6>
+
+      <mat-form-field>
+        <mat-select [(value)]="selectedStatus">
+          <mat-select-trigger>
+            <span class="selected-status">{{ selectedStatus }}</span>
+          </mat-select-trigger>
+
+          @for (item of statuses; track $index) {
+          <mat-option [value]="item">{{ item }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="container-footer">
+    <div class="left">
+      <app-svg type="map" />
+    </div>
+
+    <div class="right">
+      <div class="card-grid">
+        @for (item of cards; track item.id) {
+        <div
+          class="card"
+          [class]="item.status === selectedStatus ? 'active' : ''"
+        >
+          <h5 class="card-status" [class]="item.status + '-text'">
+            <span [class]="item.status" class="status-badge"></span>
+            {{ item.status }}
+          </h5>
+          <h4 class="card-title">{{ item.title }}</h4>
+          <span class="card-location">
+            <mat-icon>anchor</mat-icon>
+            {{ item.location }}</span
+          >
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

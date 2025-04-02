@@ -1,0 +1,55 @@
+@use "functions.scss" as *;
+
+.vertical-cards {
+  border: 1px solid var(--neutral-200);
+  border-radius: rem(12);
+  padding: rem(18);
+  background-color: var(--white);
+
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+
+    .card {
+      background-color: var(--neutral-100);
+      border-radius: rem(10);
+      border: 1px solid var(--neutral-200);
+      padding: rem(18);
+
+      &-title {
+        color: var(--neutral-500);
+        font-size: rem(14);
+        margin-bottom: rem(11);
+        font-weight: 400;
+      }
+
+      &-footer {
+        display: flex;
+        gap: rem(5);
+        align-items: center;
+
+        .amount {
+          color: var(--neutral-800);
+          font-size: rem(20);
+          font-weight: 600;
+        }
+
+        .percentage {
+          display: flex;
+          align-items: center;
+          gap: rem(5);
+          font-size: rem(14);
+        }
+      }
+    }
+  }
+}
+
+.green {
+  color: var(--success-700);
+}
+
+.red {
+  color: var(--danger-700);
+}

@@ -1,10 +1,7 @@
 <aside class="sidebar">
   <ul class="sidebar-container">
-    @for (item of sidebarLinks; track item.id) {
-    <li class="sidebar-item">
-      <mat-icon>{{ item.icon }}</mat-icon>
-      <span>{{ item.label }}</span>
-    </li>
+    @for (item of menuItems; track item.id) {
+    <app-sidebar-item [item]="item" [collapsed]="sideNavCollapsed()" />
     }
   </ul>
 </aside>

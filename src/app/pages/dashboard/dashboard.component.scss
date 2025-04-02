@@ -1,0 +1,18 @@
+@use "functions.scss" as *;
+
+.dashboard {
+  padding: rem(25);
+  
+  &-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: baseline;
+    gap: rem(20);
+
+    .left-cards, .right-cards {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+    }
+  }
+}

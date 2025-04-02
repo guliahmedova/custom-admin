@@ -3,6 +3,7 @@ import { LoginComponent } from '@app/pages/auth/login/login.component';
 import { RegisterComponent } from '@app/pages/auth/register/register.component';
 import { DashboardComponent } from '@app/pages/dashboard/dashboard.component';
 import { DashboardLayoutComponent } from '@app/shared/components/dashboard-layout/dashboard-layout.component';
+import { AnalyticsComponent } from './pages/analytics/analytics.component';
 
 export const routes: Routes = [
   {
@@ -26,8 +27,18 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent,
-        title: 'Home Page',
+        children: [
+          {
+            path: 'analytics',
+            component: AnalyticsComponent,
+            title: 'Analytics Page',
+          },
+          {
+            path: 'view',
+            component: DashboardComponent,
+            title: 'Dashboard Page',
+          },
+        ],
       },
     ],
   },

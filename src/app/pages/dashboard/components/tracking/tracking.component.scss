@@ -1,0 +1,111 @@
+@use "functions.scss" as *;
+
+.tracking-container {
+  border: 1px solid var(--neutral-200);
+  border-radius: rem(12);
+  padding: rem(18);
+  background-color: var(--white);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(16);
+
+    .status-container {
+      display: flex;
+      align-items: center;
+      gap: rem(11);
+
+      .status {
+        color: var(--neutral-500);
+        font-weight: 500;
+        font-size: rem(15);
+      }
+    }
+  }
+
+  .container-footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    .left {
+      app-svg {
+        width: 100%;
+        height: rem(314);
+      }
+    }
+
+    .right {
+      width: 100%;
+      height: rem(406);
+      overflow-y: auto;
+
+      .card-grid {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8);
+
+        .card {
+          border-radius: rem(10);
+          border: 1px solid var(--neutral-200);
+          background-color: var(--white);
+          padding: rem(12);
+
+          &.active {
+            border: var(--primary-700) 1px solid;
+          }
+
+          &-status {
+            font-weight: 700;
+            font-size: rem(14);
+            display: flex;
+            align-items: center;
+            gap: rem(7);
+            color: var(--primary-700);
+
+            &.Delivered-text {
+              color: var(--success-700);
+            }
+            &.Stuck-text {
+              color: var(--danger-700);
+            }
+
+            .status-badge {
+              width: rem(6);
+              height: rem(6);
+              display: inline-block;
+              border-radius: 50%;
+              background-color: var(--primary-700);
+
+              &.Delivered {
+                background-color: var(--success-700);
+              }
+              &.Stuck {
+                background-color: var(--danger-700);
+              }
+            }
+          }
+
+          &-title {
+            color: var(--neutral-800);
+            font-weight: 700;
+            font-size: rem(14);
+            margin: rem(10) 0 rem(6);
+          }
+
+          &-location {
+            display: flex;
+            align-items: center;
+            gap: rem(5);
+            color: var(--neutral-500);
+            font-size: rem(12);
+          }
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 28px;
+}

@@ -1,0 +1,29 @@
+@use "functions.scss" as *;
+
+.menu-item {
+  color: var(--neutral-500);
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  padding: rem(16) rem(10);
+
+  mat-icon {
+    color: var(--neutral-500);
+  }
+
+  .item-label {
+    padding-left: rem(10);
+  }
+
+  .arrow-icon-container {
+    margin-left: auto;
+
+    .arrow-icon {
+      color: var(--neutral-800);
+    }
+  }
+}
+
+:host * {
+  transition: all 500ms ease-in-out;
+}

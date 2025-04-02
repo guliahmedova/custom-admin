@@ -1,0 +1,55 @@
+@use "functions.scss" as *;
+
+.horizontal-cards {
+  border: 1px solid var(--neutral-200);
+  border-radius: rem(12);
+  padding: rem(18);
+  background-color: var(--white);
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--neutral-200);
+    padding-top: rem(18);
+
+    .card {
+      border-right: 1px solid var(--neutral-200);
+      padding-left: rem(15);
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &-title {
+        color: var(--neutral-500);
+        font-size: rem(14);
+        margin-bottom: rem(14);
+      }
+
+      &-footer {
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+
+        .amount {
+          font-size: rem(20);
+          font-weight: 700;
+          color: var(--neutral-800);
+        }
+
+        .percentage {
+          font-size: rem(14);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.green {
+  color: var(--success-700);
+}
+
+.red {
+  color: var(--danger-700);
+}

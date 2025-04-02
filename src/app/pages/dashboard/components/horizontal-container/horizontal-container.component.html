@@ -1,0 +1,23 @@
+<div class="horizontal-cards">
+  <h2 class="dashboard-card-title">{{ title() }}</h2>
+
+  <div class="card-grid">
+    @for (item of salesList; track item.id) {
+    <div class="card">
+      <h4 class="card-title">{{ item.title }}</h4>
+
+      <div class="card-footer">
+        <span class="amount">{{ item.amount }}</span>
+        <span
+          class="percentage"
+          [class]="item.percentage > 50 ? 'green' : 'red'"
+          >{{ item.percentage }}%</span
+        >
+        <mat-icon [class]="item.percentage > 50 ? 'green' : 'red'">{{
+          item.icon
+        }}</mat-icon>
+      </div>
+    </div>
+    }
+  </div>
+</div>

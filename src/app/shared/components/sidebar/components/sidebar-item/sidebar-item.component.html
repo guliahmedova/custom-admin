@@ -1,0 +1,40 @@
+<a
+  mat-list-item
+  [routerLink]="routeHistory() + '/' + item().route"
+  class="menu-item"
+  routerLinkActive="selected-menu-item"
+  #rla="routerLinkActive"
+  [activated]="rla.isActive"
+  (click)="nestedMenuOpen.set(!nestedMenuOpen())"
+  [style.paddingLeft]="indentation()"
+>
+  <mat-icon
+    [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
+    matListItemIcon
+  >
+    {{ item().icon }}
+  </mat-icon>
+  @if (!collapsed()) {
+  <span matListItemTitle class="item-label">{{ item().label }}</span>
+  } @if(item().children){
+  <span matListItemMeta class="arrow-icon-container">
+    @if(nestedMenuOpen()) {
+    <mat-icon class="arrow-icon">expand_less</mat-icon>
+    } @else {
+    <mat-icon class="arrow-icon">expand_more</mat-icon>
+    }
+  </span>
+  }
+</a>
+
+@if (item().children && nestedMenuOpen()) {
+<div @expandContractMenu>
+  @for (subItem of item().children; track subItem.label) {
+  <app-sidebar-item
+    [item]="subItem"
+    [collapsed]="collapsed()"
+    [routeHistory]="routeHistory() + '/' + item().route"
+  />
+  }
+</div>
+}

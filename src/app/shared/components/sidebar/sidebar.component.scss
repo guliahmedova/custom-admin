@@ -1,11 +1,7 @@
 @use "functions.scss" as *;
 
-.sidebar{
-    border: rem(1) solid var(--neutral-200);
-    height: 100%;
-    background-color: var( --white);
-
-    &-container{
-        
-    }
+.sidebar {
+  border: rem(1) solid var(--neutral-200);
+  height: 100%;
+  background-color: var(--white);
 }

@@ -1,6 +1,9 @@
-export interface SidebarLink {
+import { Type } from '@angular/core';
+
+export interface SidebarItem {
   id: string;
   icon: string;
   label: string;
-  children?: SidebarLink[];
+  children?: SidebarItem[];
+  route?: string;
 }
