@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { TableData } from '@app/pages/analytics/types';
+import { User } from '../../types/users';
 
 @Component({
   selector: 'app-info-table',
@@ -11,5 +11,5 @@ import { TableData } from '@app/pages/analytics/types';
 export class InfoTableComponent {
   title = input.required<string>();
   headers = ['Port', 'Total Enquires', 'Conversion Ratio', 'Trend'];
-  data = input<TableData[]>();
+  data = input<User[]>();
 }

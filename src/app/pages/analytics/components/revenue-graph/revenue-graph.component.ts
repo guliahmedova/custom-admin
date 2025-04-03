@@ -1,71 +1,53 @@
-import { Component, DoCheck, input, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { NgxEchartsModule } from 'ngx-echarts';
+import * as echarts from 'echarts';
+
+type EChartsOption = echarts.EChartsOption;
 
 @Component({
   selector: 'app-revenue-graph',
-  imports: [
-    MatSelectModule,
-    MatFormFieldModule,
-    NgxEchartsModule,
-    MatTooltipModule,
-  ],
+  imports: [MatSelectModule, MatFormFieldModule, MatTooltipModule],
   templateUrl: './revenue-graph.component.html',
   styleUrl: './revenue-graph.component.scss',
 })
-export class RevenueGraphComponent implements OnInit, DoCheck {
+export class RevenueGraphComponent implements OnInit {
   title = input.required<string>();
   periods = ['Year', 'Month', 'Week', 'Day', 'Hour', 'Minute'];
   selectedPeriod = this.periods[0];
 
-  options: any;
-  ngDoCheck(): void {
-    console.log('doCheck');
+  document: Document = inject(DOCUMENT);
+  private myChart: any = null;
+
+  ngOnInit() {
+    this.initChart();
   }
 
-  getTooltipFormatter() {
-    return (params: any) => {
-      return '<div style="width:300px; height: 400px">working</div>';
-    };
-  }
+  private initChart(): void {
+    this.myChart = echarts.init(this.document.getElementById('graph'));
 
-  ngOnInit(): void {
-    const xAxisData = [];
-    const data1 = [];
-    const data2 = [];
-
-    for (let i = 0; i < 5; i++) {
-      xAxisData.push('category' + i);
-      data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
-      data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
-    }
-
-    this.options = {
-      tooltip: {
-        // formatter: params => {
-        //   return '<div style="width:300px; height: 400px">working</div>';
-        // },
-        formatter: this.getTooltipFormatter(),
-        confine: true,
-      },
+    const option: EChartsOption = {
       xAxis: {
-        data: xAxisData,
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       },
-      yAxis: {},
+      yAxis: {
+        type: 'value',
+      },
       series: [
         {
+          data: [120, 200, 150, 80, 70, 110, 130],
           type: 'bar',
-          barCategoryGap: '0%',
-          data: data1,
-        },
-        {
-          type: 'bar',
-          barCategoryGap: '0%',
-          data: data2,
+          showBackground: true,
+          backgroundStyle: {
+            color: 'rgba(180, 180, 180, 0.2)',
+          },
         },
       ],
     };
+
+    this.myChart.setOption(option);
   }
 }

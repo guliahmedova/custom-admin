@@ -15,25 +15,25 @@
       @for (item of data(); track $index) {
       <div class="table-body-row">
         <div class="port">
-          @if (item.avatar) {
-          <img [src]="item.avatar" [alt]="item.port" />
+          @if (item.image) {
+          <img [src]="item.image" [alt]="item.firstName" />
           }
-          <span>{{ item.port }}</span>
         </div>
 
         <div class="total">
-          {{ item.total }}
+          {{ item.lastName }}
         </div>
 
         <div class="ratio">
-          {{ item.ratio }}
+          {{ item.maidenName }}
         </div>
 
         <div class="trend">
-          {{ item.trend }}
+          {{ item.age }}
         </div>
       </div>
       }
     </div>
   </div>
 </div>
+

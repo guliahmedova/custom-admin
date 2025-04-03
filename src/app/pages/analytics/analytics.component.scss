@@ -2,4 +2,13 @@
 
 .analytic {
   padding: rem(25);
+
+  &-container {
+    .analytic-tables {
+      margin-top: rem(20);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(20);
+    }
+  }
 }
